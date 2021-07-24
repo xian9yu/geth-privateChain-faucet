@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faucet</title>
+</head>
+<body>
+<div>
+    <div>
+        <p>HECO 水龙头:</p>
+        <p>address: {{.address}}</p>
+        <p>balance: {{.balance}}</p>
+    </div>
+    <br>
+    <div>
+        <form action="" method="POST">
+            <label> <p>输入接水地址: <input type="text" name="wallet" value="eth地址"></p> </label>
+            <label> <p>gas Fee 上限: <input type="text" name="gasFee" value="21000"></p> </label>
+
+            <button value="getCoin">每天只能领2个</button>
+        </form>
+    </div>
+    <br>
+    <div>
+        <p>message: {{.message}}</p>
+    </div>
+</div>
+</body>
+</html>
