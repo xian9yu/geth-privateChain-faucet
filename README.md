@@ -1,2 +1,2 @@
 # geth-privateChain-faucet
-geth 私链测试水龙头
+geth 私链领取测试币的水龙头
