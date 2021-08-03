@@ -8,18 +8,18 @@ import (
 )
 
 var (
-	Rdb *redis.Client
-	ctx = context.Background()
+	Rdb       *redis.Client
+	ctx       = context.Background()
+	redisHost = "127.0.0.1:6379"
 )
 
 func InitRedis() *redis.Client {
-	addr := "127.0.0.1:6379"
 
 	Rdb = redis.NewClient(&redis.Options{
-		Addr:     addr, // host:port
-		Password: "",   // set password
-		DB:       0,    // use default DB
-		PoolSize: 100,  // 连接池大小
+		Addr:     redisHost, // host:port
+		Password: "",        // set password
+		DB:       0,         // use default DB
+		PoolSize: 100,       // 连接池大小
 	})
 
 	//检测心跳

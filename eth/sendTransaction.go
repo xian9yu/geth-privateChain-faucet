@@ -16,6 +16,7 @@ import (
 	"time"
 )
 
+// SendTransaction 打币
 func SendTransaction(c *gin.Context) {
 
 	if c.Request.Method == "GET" {
