@@ -1,0 +1,8 @@
+version: "3"    # docker-compose版本号
+    
+services:   # 当前项目中的容器服务
+  faucet:    #服务名称
+    image: my-geth-faucet:0.0.1    # 指定使用镜像 image:tag 相当于run image
+    container_name: my-geth-faucet  # 相当于run --name (内部访问可以代替ip)
+    ports:  # 指定宿主机端口与容器端口映射, "宿主机端口:容器口"run -p 
+        - "3003:3003" 
