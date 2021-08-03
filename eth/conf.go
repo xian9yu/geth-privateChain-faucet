@@ -15,6 +15,6 @@ var (
 	// 水龙头私钥
 	faucetPrivateKey = "43be8992c040d5150c8dca5f46283765c20cab15b19390814c749d3040404cdd"
 
-	// 每天领取数量(单位: ether)
+	// 每次领取数量(单位: ether)
 	onceCoin int64 = 2
 )

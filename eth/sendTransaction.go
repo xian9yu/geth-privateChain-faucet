@@ -16,11 +16,25 @@ import (
 	"time"
 )
 
-// SendTransaction 打币
 func SendTransaction(c *gin.Context) {
 
 	if c.Request.Method == "GET" {
-		c.HTML(http.StatusOK, "index.html", nil)
+		account := common.HexToAddress(faucetFrom)
+
+		// 获取水龙头账号余额
+		balance, err := client.BalanceAt(ctx, account, nil)
+		if err != nil {
+			c.HTML(http.StatusOK, "index.html", gin.H{
+				"message": err.Error(),
+			})
+			return
+		}
+
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"address": account,
+			"balance": utils.BalanceAtFromWei(balance),
+		})
+		//c.HTML(http.StatusOK, "index.html", nil)
 
 	} else if c.Request.Method == "POST" {
 		// 获取收款地址

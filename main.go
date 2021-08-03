@@ -9,7 +9,7 @@ import (
 )
 
 func initRouter(router *gin.Engine) {
-	router.GET("/", eth.Index)
+	router.GET("/", eth.SendTransaction)
 	router.POST("/", eth.SendTransaction)
 
 }
